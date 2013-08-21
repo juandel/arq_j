@@ -1,6 +1,6 @@
 class ProjectController < ApplicationController
   def list
-  	@projects= Project.all
+  	@projects= Project.all.sorted
   end
 
   def show

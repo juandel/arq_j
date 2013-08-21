@@ -1,2 +1,15 @@
-<h1>Project#show</h1>
-<p>Find me in app/views/project/show.html.erb</p>
+=link_to('<< Previous',{:id => @project.previous})
+=link_to('Next >>',{:id => @project.next})
+-if @project
+	%h1  #{@project.name}
+	- @project.images.each do |e|
+		-if e.cover
+			=image_tag(e.photo.url(:medium))
+		%h2 #{@project.category}
+		%h3 #{@project.status}
+		%h4 #{@project.location}
+		%p  #{@project.memoria_descriptiva}	
+		=image_tag(e.photo.url(:thumb))
+
+
+
