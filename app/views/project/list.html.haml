@@ -1,11 +1,10 @@
 - @projects.each do |e|
-	.span2
-		= link_to({:action =>'show', :id => e.id }, :class => 'image') do
-			- e.images.each do |image|
-				-if image.cover 
-					= image_tag(image.photo.url(:medium))
-					.over
-					.over_cross
-						=e.name
-						= image_tag('over_cross.png')
-  	  
+	- e.images.each do |image|
+		-if image.cover 
+			.span2
+				= link_to(image_tag(image.photo.url(:medium)),{:action =>'show', :id => e.id }, :class => 'image') 
+				.over
+				.over_cross
+					=e.name
+					= image_tag('over_cross.png')
+	  	  
