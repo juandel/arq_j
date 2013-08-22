@@ -1,5 +1,7 @@
-=link_to('<< Previous',{:id => @project.previous})
-=link_to('Next >>',{:id => @project.next})
+-if @previous
+	=link_to('<< Previous',{:id => @previous})
+-if @next
+	=link_to('Next >>',{:id => @next})
 -if @project
 	%h1  #{@project.name}
 	- @project.images.each do |e|

@@ -5,14 +5,10 @@ class Project < ActiveRecord::Base
 	
 	scope :sorted, order(id: :asc)
 
-	def previous
-		Project.where("projects.id > ?", :id).order(id: :desc).first
-	end
-
-	def next
-		Project.where("projects.id < ?", :id).order(id: :desc).first
-	end
-
+	validates :name, :presence => true, :length =>{:maximum => 20}
+  validates :category, :presence => true
+  validates :status, :presence => true
+	
 	private
     def project_params
       params.require(:project).permit!

@@ -33,8 +33,8 @@ ActiveAdmin.register Project do
 	  	f.input :name
 	  	f.input :num_project
 	  	f.input :location
-	  	f.input :category
-	  	f.input :status
+	  	f.input :category, :as => :select, :collection => ["", "", "", ""]
+	  	f.input :status, :as => :select, :collection => ["", "", "", ""]
 	  	f.input :memoria_descriptiva
 	  end
     f.has_many :images, title: 'Images' do |fi|
