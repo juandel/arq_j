@@ -1,0 +1,29 @@
+%nav.top-bar
+  %ul.title-area
+    / Title Area
+    %li.name
+      %h1
+        = link_to('ARQ',{:action => 'list'})
+    / Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone
+    %li.toggle-topbar.menu-icon
+      %a{:href => "#"}
+        %span Menu
+  %section.top-bar-section
+    / Left Nav Section
+    %ul.left
+      %li.has-dropdown
+        = link_to('Proyectos',{:action => 'list'})
+        %ul.dropdown
+          %li
+            = link_to('Desarollo',{:action => 'desarollo', :category => 'desarollo'})
+          %li
+            = link_to('Construccion',{:action => 'construccion', :category => 'construccion'})
+          %li
+            = link_to('Vivienda',{:action => 'vivienda', :category => 'vivienda'})
+          %li
+            = link_to('Laboratorio',{:action => 'laboratorio', :category => 'laboratorio'})
+      %li
+        = link_to('About')
+      %li
+        = link_to('Contact')
+      

@@ -1,0 +1,9 @@
+- @proj_construccion.each do |e|
+	- e.images.each do |image|
+		-if image.cover 
+			.span2
+				= link_to(image_tag(image.photo.url(:medium)),{:action =>'show', :id => e.id }, :class => 'image') 
+				.over
+				.over_cross
+					=e.name
+					= image_tag('over_cross.png')

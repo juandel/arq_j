@@ -1,4 +1,8 @@
 Arq::Application.routes.draw do
+  get "project/desarollo"
+  get "project/vivienda"
+  get "project/laboratorio"
+  get "project/construccion"
   get "project/list"
   get "project/show"
   devise_for :admin_users, ActiveAdmin::Devise.config
